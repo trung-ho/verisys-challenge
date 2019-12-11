@@ -40,8 +40,6 @@ sample.csv
 
 App will convert your csv file to json file and store at `public/json_files`
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
 
 # Overview of the process and the technologies:
 Langue: `Ruby`     
@@ -62,3 +60,7 @@ I will need to eliminate duplicate record and configure Docker.
 
 # Feedback on the challenge itself
 I don't have any feedback
+
+
+# License
+[MIT](https://choosealicense.com/licenses/mit/)

@@ -28,11 +28,7 @@ module Converter
       if error_array.any?
         self.errors = error_array
       end
-      if Rails.env.test?
-        File.write('spec/' + file_name, employee_list)
-      else
-        File.write('public/' + file_name, employee_list)
-      end
+      File.write('public/' + file_name, employee_list)
       self.result_path = file_name
       return self
     end

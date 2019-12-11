@@ -1,24 +1,34 @@
-# README
+## Installation
+Clone or download code, then run
+```bash
+bundle install
+```
+to install all dependencies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to run
 
-Things you may want to cover:
+There are 2 ways:
 
-* Ruby version
+### By Web UI
+First: Open terminal and start server by command
+```bash
+rails server
+```
+Then: open web application in your localhost. Eg: `localhost:3000`
 
-* System dependencies
+Next: Select CSV file and click on submit. Server will return json file and errors if any.
 
-* Configuration
+### By Console
+Before run, please put your csv at `app/lib/csv_files`
 
-* Database creation
+Open terminal and run
 
-* Database initialization
+```bash
+ruby app/lib/csv_to_json.rb
+```
 
-* How to run the test suite
+Then: input your csv file which you have placed at `app/lib/csv_files` before. Eg: `sample.csv`
+App will convert your csv file to json file and store at `public/json_files`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

@@ -16,13 +16,14 @@ class Employee
 
   def initialize(args = nil)
     args ||= {}
+    self.validate_success = true
     ALL_ATTRIBUTES.each do |attribute|
       self.send(attribute.to_s + "=", args[attribute])
     end
 
     after_init_callback
-  rescue
-    puts 'Fail to init Employee'
+  # rescue
+  #   puts 'Fail to init Employee'
   end
 
   def as_json
@@ -55,7 +56,7 @@ class Employee
 
   def after_init_callback
     check_phone_number
-    # validate_driver_license
+    validate_driver_license
   end
 
   def check_phone_number
@@ -70,5 +71,26 @@ class Employee
   rescue
     puts 'Fail to format phone number'
     ''
+  end
+
+  def validate_driver_license
+    self.validate_success = false if self.license_number == '' || 
+      self.license_number.nil? || self.license_number.size != 10
+
+    return false unless self.validate_success
+    digits = self.license_number.split('')
+    security_digit = digits[9].to_i
+    sum = digits.first(9).map(&:to_i).sum
+
+    self.validate_success = false if (sum%10 != security_digit)
+    if self.validate_success
+      return true
+    else
+      return false
+    end
+  end
+
+  def full_name
+    [self.first_name, self.middle_name, self.last_name].reject { |w| w.nil? || w.empty? }.join(' ')
   end
 end

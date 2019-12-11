@@ -1,3 +1,6 @@
+# JSON Output 
+Please find 3 json output here: `https://github.com/trung-ho/verisys-challenge/tree/master/public/json_files`
+# Installation and how to run
 ## Installation
 Clone or download code
 
@@ -28,7 +31,34 @@ ruby app/lib/csv_to_json.rb
 ```
 
 Then: input your csv file which you have placed at `app/lib/csv_files` before. Eg: `sample.csv`
+```ruby
+Begin
+Please input file name (eg: sample.csv)
+Please note: File must be at app/lib/csv_files):
+sample.csv
+```
+
 App will convert your csv file to json file and store at `public/json_files`
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+# Overview of the process and the technologies:
+Langue: `Ruby`     
+Framwork: `Rails`       
+Unit Test: `Rspec`    
+
+# Any challenges you
+I have some challenge at beginning. I spend an 30 minutes to think about how to write a clean and reusable code.  
+I also didn't have enough time to eliminate the duplicate record.  
+I have used `Docker` before but never config it so that I skip that step. 
+I spent more than 3 hours to finish it.
+
+# Questions or assumptions
+I have no question.
+
+# Next steps to finish the challenge
+I will need to eliminate duplicate record and configure Docker.
+
+# Feedback on the challenge itself
+I don't have any feedback

@@ -1,12 +1,12 @@
 ## Installation
-Clone or download code, then run
+Clone or download code
+
+Then install all dependencies (you can skip this step if only run code by command line)
 ```bash
 bundle install
 ```
-to install all dependencies
 
 ## How to run
-
 There are 2 ways:
 
 ### By Web UI

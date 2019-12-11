@@ -22,8 +22,8 @@ class Employee
     end
 
     after_init_callback
-  # rescue
-  #   puts 'Fail to init Employee'
+  rescue
+    puts 'Fail to init Employee'
   end
 
   def as_json

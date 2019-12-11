@@ -1,3 +1,4 @@
+require 'csv'
 module Converter
   class Csv
     attr_accessor :original_path, :result_path, :errors
@@ -9,7 +10,7 @@ module Converter
 
     def convert_to_json
       records = CSV.open(self.original_path, :headers => true).map { |x| x.to_h }
-      file_name = "tmp/#{Time.now.to_i}_employee_list.json"
+      file_name = "json_files/#{Time.now.to_i}_employee_list.json"
 
       employee_list = { 'data': []}
       error_array = []
@@ -27,7 +28,7 @@ module Converter
       if error_array.any?
         self.errors = error_array
       end
-      File.write(file_name, employee_list)
+      File.write('public/' + file_name, employee_list)
       self.result_path = file_name
       return self
     end

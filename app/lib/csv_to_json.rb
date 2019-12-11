@@ -1,4 +1,3 @@
-require 'csv'
 require 'json'
 require 'byebug'
 require_relative '../lib/employee'
@@ -15,7 +14,7 @@ if file_name!= '' && !file_name.nil? && (File.exist? path)
   if csv_file_converter.errors.any?
     puts csv_file_converter.errors.join('. ')
   end
-  puts "File convert succsessfull. Please find json file at: #{csv_file_converter.result_path}"
+  puts "File convert succsessfull. Please find json file at: public/#{csv_file_converter.result_path}"
 else
   puts 'Invalid file name.'
 end

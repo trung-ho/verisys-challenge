@@ -34,3 +34,4 @@
 yarn-debug.log*
 .yarn-integrity
 /public/json_files
+/spec/json_files
